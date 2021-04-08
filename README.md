@@ -48,10 +48,6 @@ There are multiple ways to use this project.
 
 Each example can be run from the command line either by providing `input` directly at the console and providing a valid `Python` file. Note, that depending on which `Example` is run, the program could fail if the grammar is not supported. For example `Example1` lexer implementation may not support all tokens in a provided valid `Python` file. `Example5` should work on any Python file (provided there are not bugs!)
 
-``` bash
-stack exec wya-lexer-exe -- --example_name Example5 --file_name "hello_world.py"
-```
-
 Here are some examples, where the prior Example does not support a grammar but using a later version the tokens are generated.
 
 ``` bash
@@ -62,6 +58,7 @@ identifier
 42
 0,0-0,0:             Number     "42"
 
+--- Note Example2 does not support `+` yet, therefore the Lexer will fail
 #  ~/fsf/wya-lexer on git:main x
 $ stack exec wya-lexer-exe -- --example_name Example2
 a + b
@@ -69,6 +66,7 @@ wya-lexer-exe: Lexical error(' ',[],"+ b\n")
 CallStack (from HasCallStack):
   error, called at src/Example2/Lexer.x:103:28 in wya-lexer-0.1.0.0-CGMHpbYSL6uA5793UGrB8f:Example2.Lexer
 
+-- Whereas Example3 will succeed
 #  ~/fsf/write-you-a-python-lexer on git:main x C:130
 $ stack exec wya-lexer-exe -- --example_name Example3
 a + b
@@ -134,6 +132,31 @@ $ time stack exec wya-lexer-exe -- --example_name Example5 --file_name hello_wor
 stack exec wya-lexer-exe -- --example_name Example5 --file_name hello_world.p  0.19s user 0.03s system 101% cpu 0.220 total
 
 ```
+
+### Executing from ghci / from other
+
+``` bash
+
+λ >>import Example5.LexerRunner as L5
+
+λ >>L5.runLexer "s = a + b"
+Right [TokenInfo {token_type = Name, token_string = "s", start_pos = (1,0), end_pos = (1,1)},TokenInfo {token_type = Equal, token_string = "=", start_pos = (1,2), end_pos = (1,3)},TokenInfo {token_type = Name, to
+ken_string = "a", start_pos = (1,4), end_pos = (1,5)},TokenInfo {token_type = Plus, token_string = "+", start_pos = (1,6), end_pos = (1,7)},TokenInfo {token_type = Name, token_string = "b", start_pos = (1,8), end_pos = (1,9)}]
+it :: Either String [Example5.Tokens.TokenInfo]
+
+λ >>L5.runAndPrettyPrintLexer  "s = a + b"
+1,0-1,1:             Name       "s"
+1,2-1,3:             Equal      "="
+1,4-1,5:             Name       "a"
+1,6-1,7:             Plus       "+"
+1,8-1,9:             Name       "b"
+it :: ()
+λ >>
+
+```
+
+The `Example5.runLexer` function can be used to call the lexer when used as a library.
+
 
 # Known Issues (Differences with the tokenizer.py)
 
