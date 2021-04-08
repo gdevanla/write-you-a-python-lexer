@@ -1,0 +1,43 @@
+input:
+async def foo():
+  def foo(await):
+    await = 1
+  if 1:
+    await
+async += 1
+
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NAME       'def'         (1, 6) (1, 9)
+    NAME       'foo'         (1, 10) (1, 13)
+    LPAR       '('           (1, 13) (1, 14)
+    RPAR       ')'           (1, 14) (1, 15)
+    COLON      ':'           (1, 15) (1, 16)
+    NEWLINE    '\n'          (1, 16) (1, 17)
+    INDENT     '  '          (2, 0) (2, 2)
+    NAME       'def'         (2, 2) (2, 5)
+    NAME       'foo'         (2, 6) (2, 9)
+    LPAR       '('           (2, 9) (2, 10)
+    NAME       'await'       (2, 10) (2, 15)
+    RPAR       ')'           (2, 15) (2, 16)
+    COLON      ':'           (2, 16) (2, 17)
+    NEWLINE    '\n'          (2, 17) (2, 18)
+    INDENT     '    '        (3, 0) (3, 4)
+    NAME       'await'       (3, 4) (3, 9)
+    EQUAL      '='           (3, 10) (3, 11)
+    NUMBER     '1'           (3, 12) (3, 13)
+    NEWLINE    '\n'          (3, 13) (3, 14)
+    DEDENT     ''            (4, 2) (4, 2)
+    NAME       'if'          (4, 2) (4, 4)
+    NUMBER     '1'           (4, 5) (4, 6)
+    COLON      ':'           (4, 6) (4, 7)
+    NEWLINE    '\n'          (4, 7) (4, 8)
+    INDENT     '    '        (5, 0) (5, 4)
+    NAME       'await'       (5, 4) (5, 9)
+    NEWLINE    '\n'          (5, 9) (5, 10)
+    DEDENT     ''            (6, 0) (6, 0)
+    DEDENT     ''            (6, 0) (6, 0)
+    NAME       'async'       (6, 0) (6, 5)
+    PLUSEQUAL  '+='          (6, 6) (6, 8)
+    NUMBER     '1'           (6, 9) (6, 10)

@@ -1,0 +1,6 @@
+input:
+rb"a\
+d"
+
+result:
+    STRING     'rb"a\\\nd"'  (1, 0) (2, 2)

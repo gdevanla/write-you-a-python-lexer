@@ -1,0 +1,5 @@
+input:
+f"""abc"""
+
+result:
+    STRING     'f"""abc"""'  (1, 0) (1, 10)

@@ -1,0 +1,38 @@
+input:
+async def f():
+
+  def baz(): pass
+  async def bar(): pass
+
+  await = 2
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NAME       'def'         (1, 6) (1, 9)
+    NAME       'f'           (1, 10) (1, 11)
+    LPAR       '('           (1, 11) (1, 12)
+    RPAR       ')'           (1, 12) (1, 13)
+    COLON      ':'           (1, 13) (1, 14)
+    NEWLINE    '\n'          (1, 14) (1, 15)
+    NL         '\n'          (2, 0) (2, 1)
+    INDENT     '  '          (3, 0) (3, 2)
+    NAME       'def'         (3, 2) (3, 5)
+    NAME       'baz'         (3, 6) (3, 9)
+    LPAR       '('           (3, 9) (3, 10)
+    RPAR       ')'           (3, 10) (3, 11)
+    COLON      ':'           (3, 11) (3, 12)
+    NAME       'pass'        (3, 13) (3, 17)
+    NEWLINE    '\n'          (3, 17) (3, 18)
+    NAME       'async'       (4, 2) (4, 7)
+    NAME       'def'         (4, 8) (4, 11)
+    NAME       'bar'         (4, 12) (4, 15)
+    LPAR       '('           (4, 15) (4, 16)
+    RPAR       ')'           (4, 16) (4, 17)
+    COLON      ':'           (4, 17) (4, 18)
+    NAME       'pass'        (4, 19) (4, 23)
+    NEWLINE    '\n'          (4, 23) (4, 24)
+    NL         '\n'          (5, 0) (5, 1)
+    NAME       'await'       (6, 2) (6, 7)
+    EQUAL      '='           (6, 8) (6, 9)
+    NUMBER     '2'           (6, 10) (6, 11)
+    DEDENT     ''            (7, 0) (7, 0)

@@ -1,0 +1,22 @@
+input:
+import sys, time
+x = sys.modules['time'].time()
+
+result:
+    NAME       'import'      (1, 0) (1, 6)
+    NAME       'sys'         (1, 7) (1, 10)
+    COMMA      ','           (1, 10) (1, 11)
+    NAME       'time'        (1, 12) (1, 16)
+    NEWLINE    '\n'          (1, 16) (1, 17)
+    NAME       'x'           (2, 0) (2, 1)
+    EQUAL      '='           (2, 2) (2, 3)
+    NAME       'sys'         (2, 4) (2, 7)
+    DOT        '.'           (2, 7) (2, 8)
+    NAME       'modules'     (2, 8) (2, 15)
+    LSQB       '['           (2, 15) (2, 16)
+    STRING     "'time'"      (2, 16) (2, 22)
+    RSQB       ']'           (2, 22) (2, 23)
+    DOT        '.'           (2, 23) (2, 24)
+    NAME       'time'        (2, 24) (2, 28)
+    LPAR       '('           (2, 28) (2, 29)
+    RPAR       ')'           (2, 29) (2, 30)

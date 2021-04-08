@@ -1,0 +1,11 @@
+input:
+br'abc' + bR'abc' + Br'abc' + BR'abc'
+
+result:
+    STRING     "br'abc'"     (1, 0) (1, 7)
+    PLUS       '+'           (1, 8) (1, 9)
+    STRING     "bR'abc'"     (1, 10) (1, 17)
+    PLUS       '+'           (1, 18) (1, 19)
+    STRING     "Br'abc'"     (1, 20) (1, 27)
+    PLUS       '+'           (1, 28) (1, 29)
+    STRING     "BR'abc'"     (1, 30) (1, 37)

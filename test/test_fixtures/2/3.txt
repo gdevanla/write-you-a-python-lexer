@@ -1,0 +1,16 @@
+input:
+double_quoted
+"test string"
+"fsafafas 'fsafafa"
+"fsafafas \"fsafafa"
+"fsafafas \'fsafafa"
+"abc\
+xyz"
+
+result:
+    NAME           'double_quoted'         (0, 0) (0, 0)
+    STRING         '"test string"'         (0, 0) (0, 0)
+    STRING         '"fsafafas 'fsafafa"'   (0, 0) (0, 0)
+    STRING         '"fsafafas \\"fsafafa"' (0, 0) (0, 0)
+    STRING         '"fsafafas \\'fsafafa"' (0, 0) (0, 0)
+    STRING         '"abc\\\nxyz"'          (0, 0) (0, 0)

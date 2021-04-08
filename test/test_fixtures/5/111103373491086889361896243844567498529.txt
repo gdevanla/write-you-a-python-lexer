@@ -1,0 +1,7 @@
+input:
+0b10 <= 255
+
+result:
+    NUMBER     '0b10'        (1, 0) (1, 4)
+    LESSEQUAL  '<='          (1, 5) (1, 7)
+    NUMBER     '255'         (1, 8) (1, 11)

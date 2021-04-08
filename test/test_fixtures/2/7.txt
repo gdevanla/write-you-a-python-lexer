@@ -1,0 +1,26 @@
+input:
+double_quoted_bytes
+b"test string"
+b"fsafafas 'fsafafa"
+b"fsafafas \"fsafafa"
+b"fsafafas \'fsafafa"
+b"abc\
+xyz"
+b"\xe0\xae\x85"
+b"""
+long bytes
+"""
+b'''
+long bytes
+'''
+
+result:
+    NAME           'double_quoted_bytes'         (0, 0) (0, 0)
+    STRING         'b"test string"'         (0, 0) (0, 0)
+    STRING         'b"fsafafas 'fsafafa"'   (0, 0) (0, 0)
+    STRING         'b"fsafafas \\"fsafafa"' (0, 0) (0, 0)
+    STRING         'b"fsafafas \\'fsafafa"' (0, 0) (0, 0)
+    STRING         'b"abc\\\nxyz"'          (0, 0) (0, 0)
+    STRING         'b"\\xe0\\xae\\x85"'      (0, 0) (0, 0)
+    STRING         'b"""\nlong bytes\n"""'         (0, 0) (0, 0)
+    STRING         'b'''\nlong bytes\n''''         (0, 0) (0, 0)

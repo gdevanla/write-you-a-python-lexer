@@ -1,0 +1,7 @@
+input:
+0xdeadc0de & 12345
+
+result:
+    NUMBER     '0xdeadc0de'  (1, 0) (1, 10)
+    AMPER      '&'           (1, 11) (1, 12)
+    NUMBER     '12345'       (1, 13) (1, 18)

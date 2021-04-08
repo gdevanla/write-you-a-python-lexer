@@ -1,0 +1,11 @@
+input:
+x = 1 << 1 >> 5
+
+result:
+    NAME       'x'           (1, 0) (1, 1)
+    EQUAL      '='           (1, 2) (1, 3)
+    NUMBER     '1'           (1, 4) (1, 5)
+    LEFTSHIFT  '<<'          (1, 6) (1, 8)
+    NUMBER     '1'           (1, 9) (1, 10)
+    RIGHTSHIFT '>>'          (1, 11) (1, 13)
+    NUMBER     '5'           (1, 14) (1, 15)

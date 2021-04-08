@@ -1,0 +1,8 @@
+input:
+async
+await
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NEWLINE    '\n'          (1, 5) (1, 6)
+    NAME       'await'       (2, 0) (2, 5)

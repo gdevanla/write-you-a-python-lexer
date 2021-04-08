@@ -1,0 +1,6 @@
+input:
+u"a\
+de"
+
+result:
+    STRING     'u"a\\\nde"'  (1, 0) (2, 3)

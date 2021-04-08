@@ -1,0 +1,17 @@
+input:
+@staticmethod
+def foo(x,y): pass
+
+result:
+    AT         '@'           (1, 0) (1, 1)
+    NAME       'staticmethod' (1, 1) (1, 13)
+    NEWLINE    '\n'          (1, 13) (1, 14)
+    NAME       'def'         (2, 0) (2, 3)
+    NAME       'foo'         (2, 4) (2, 7)
+    LPAR       '('           (2, 7) (2, 8)
+    NAME       'x'           (2, 8) (2, 9)
+    COMMA      ','           (2, 9) (2, 10)
+    NAME       'y'           (2, 10) (2, 11)
+    RPAR       ')'           (2, 11) (2, 12)
+    COLON      ':'           (2, 12) (2, 13)
+    NAME       'pass'        (2, 14) (2, 18)

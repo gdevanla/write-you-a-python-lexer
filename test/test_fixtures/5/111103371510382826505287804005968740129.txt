@@ -1,0 +1,5 @@
+input:
+async
+
+result:
+    NAME       'async'       (1, 0) (1, 5)

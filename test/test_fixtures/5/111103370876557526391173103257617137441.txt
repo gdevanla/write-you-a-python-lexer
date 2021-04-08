@@ -1,0 +1,7 @@
+input:
+async()
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    LPAR       '('           (1, 5) (1, 6)
+    RPAR       ')'           (1, 6) (1, 7)

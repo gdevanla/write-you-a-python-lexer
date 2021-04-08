@@ -1,0 +1,8 @@
+input:
+class async:pass
+
+result:
+    NAME       'class'       (1, 0) (1, 5)
+    NAME       'async'       (1, 6) (1, 11)
+    COLON      ':'           (1, 11) (1, 12)
+    NAME       'pass'        (1, 12) (1, 16)

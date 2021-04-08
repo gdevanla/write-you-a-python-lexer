@@ -1,0 +1,7 @@
+input:
+0o123 <= 0O123
+
+result:
+    NUMBER     '0o123'       (1, 0) (1, 5)
+    LESSEQUAL  '<='          (1, 6) (1, 8)
+    NUMBER     '0O123'       (1, 9) (1, 14)

@@ -1,0 +1,11 @@
+input:
+async with a as b: pass
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NAME       'with'        (1, 6) (1, 10)
+    NAME       'a'           (1, 11) (1, 12)
+    NAME       'as'          (1, 13) (1, 15)
+    NAME       'b'           (1, 16) (1, 17)
+    COLON      ':'           (1, 17) (1, 18)
+    NAME       'pass'        (1, 19) (1, 23)

@@ -1,0 +1,11 @@
+input:
+async
+...
+await
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NEWLINE    '\n'          (1, 5) (1, 6)
+    ELLIPSIS   '...'         (2, 0) (2, 3)
+    NEWLINE    '\n'          (2, 3) (2, 4)
+    NAME       'await'       (3, 0) (3, 5)

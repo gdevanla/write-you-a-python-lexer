@@ -1,0 +1,6 @@
+input:
+Rf"abc\
+def"
+
+result:
+    STRING     'Rf"abc\\\ndef"' (1, 0) (2, 4)

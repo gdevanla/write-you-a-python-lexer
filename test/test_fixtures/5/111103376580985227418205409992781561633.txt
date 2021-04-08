@@ -1,0 +1,5 @@
+input:
+fR"a{b}c"
+
+result:
+    STRING     'fR"a{b}c"'   (1, 0) (1, 9)

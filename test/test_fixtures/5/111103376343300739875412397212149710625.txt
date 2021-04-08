@@ -1,0 +1,6 @@
+input:
+u"""a\
+b"""
+
+result:
+    STRING     'u"""a\\\nb"""' (1, 0) (2, 4)

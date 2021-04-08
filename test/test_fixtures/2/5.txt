@@ -1,0 +1,9 @@
+input:
+long_quoted
+"""happy fox jumped over 'non-shrinking' text and new line "non-shrinking"
+on new line with back slash \
+"""
+
+result:
+    NAME           'long_quoted'         (0, 0) (0, 0)
+    STRING         '"""happy fox jumped over 'non-shrinking' text and new line "non-shrinking"\non new line with back slash \\\n"""'             (0, 0) (0, 0)

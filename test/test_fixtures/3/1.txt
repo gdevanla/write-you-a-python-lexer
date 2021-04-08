@@ -1,0 +1,13 @@
+input:
+identifier
+121212
+"string literal"
+a + b
+
+result:
+    NAME       'identifier'         (1, 1) (1, 10)
+    NUMBER     '121212'             (2, 1) (2, 6)
+    STRING     '"string literal"'   (3, 1) (3, 16)
+    NAME       'a'                  (4, 1) (4, 1)
+    PLUS       '+'                  (4, 3) (4, 3)
+    NAME       'b'                  (4, 5) (4, 5)

@@ -1,0 +1,7 @@
+input:
+async = 1
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    EQUAL      '='           (1, 6) (1, 7)
+    NUMBER     '1'           (1, 8) (1, 9)

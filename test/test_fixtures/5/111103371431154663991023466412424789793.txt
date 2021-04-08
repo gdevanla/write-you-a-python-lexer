@@ -1,0 +1,7 @@
+input:
+async.foo
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    DOT        '.'           (1, 5) (1, 6)
+    NAME       'foo'         (1, 6) (1, 9)

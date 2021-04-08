@@ -1,0 +1,7 @@
+input:
+rb"""a\
+b\
+c"""
+
+result:
+    STRING     'rb"""a\\\nb\\\nc"""' (1, 0) (3, 4)

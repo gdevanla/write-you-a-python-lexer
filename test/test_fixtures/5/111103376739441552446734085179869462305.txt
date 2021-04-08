@@ -1,0 +1,6 @@
+input:
+f"abc\
+def"
+
+result:
+    STRING     'f"abc\\\ndef"' (1, 0) (2, 4)

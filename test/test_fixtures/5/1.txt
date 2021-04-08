@@ -1,0 +1,16 @@
+input:
+identifier
+121212
+"string literal"
+a + b
+
+result:
+    NAME       'identifier'         (1, 0) (1, 10)
+    NEWLINE    '\n'                 (1, 10) (1, 11)
+    NUMBER     '121212'             (2, 0) (2, 6)
+    NEWLINE    '\n'                 (2, 6) (2, 7)
+    STRING     '"string literal"'   (3, 0) (3, 16)
+    NEWLINE    '\n'                 (3, 16) (3, 17)
+    NAME       'a'                  (4, 0) (4, 1)
+    PLUS       '+'                  (4, 2) (4, 3)
+    NAME       'b'                  (4, 4) (4, 5)

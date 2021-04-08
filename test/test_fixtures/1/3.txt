@@ -1,0 +1,7 @@
+input:
+112121
+variable
+
+result:
+    NUMBER       '112121'           (0, 0) (0, 0)
+    NAME         'variable'         (0, 0) (0, 0)

@@ -1,0 +1,7 @@
+input:
+"a\
+de\
+fg"
+
+result:
+    STRING     '"a\\\nde\\\nfg"' (1, 0) (3, 3)

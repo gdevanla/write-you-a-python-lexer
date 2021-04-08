@@ -1,0 +1,6 @@
+*~
+*.swp
+tarballs/
+.stack-work/
+wya-lexer.cabal
+stack.yaml.lock

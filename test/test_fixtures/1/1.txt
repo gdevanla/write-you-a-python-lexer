@@ -1,0 +1,5 @@
+input:
+x
+
+result:
+    NAME       'x'           (0, 0) (0, 0)

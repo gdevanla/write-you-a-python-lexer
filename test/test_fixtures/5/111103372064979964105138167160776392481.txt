@@ -1,0 +1,21 @@
+input:
+async def foo():
+  async for i in 1: pass
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NAME       'def'         (1, 6) (1, 9)
+    NAME       'foo'         (1, 10) (1, 13)
+    LPAR       '('           (1, 13) (1, 14)
+    RPAR       ')'           (1, 14) (1, 15)
+    COLON      ':'           (1, 15) (1, 16)
+    NEWLINE    '\n'          (1, 16) (1, 17)
+    INDENT     '  '          (2, 0) (2, 2)
+    NAME       'async'       (2, 2) (2, 7)
+    NAME       'for'         (2, 8) (2, 11)
+    NAME       'i'           (2, 12) (2, 13)
+    NAME       'in'          (2, 14) (2, 16)
+    NUMBER     '1'           (2, 17) (2, 18)
+    COLON      ':'           (2, 18) (2, 19)
+    NAME       'pass'        (2, 20) (2, 24)
+    DEDENT     ''            (3, 0) (3, 0)

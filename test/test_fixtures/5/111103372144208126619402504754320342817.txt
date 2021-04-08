@@ -1,0 +1,12 @@
+input:
+async def foo(async): await
+
+result:
+    NAME       'async'       (1, 0) (1, 5)
+    NAME       'def'         (1, 6) (1, 9)
+    NAME       'foo'         (1, 10) (1, 13)
+    LPAR       '('           (1, 13) (1, 14)
+    NAME       'async'       (1, 14) (1, 19)
+    RPAR       ')'           (1, 19) (1, 20)
+    COLON      ':'           (1, 20) (1, 21)
+    NAME       'await'       (1, 22) (1, 27)
