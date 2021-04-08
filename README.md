@@ -2,7 +2,7 @@
 
 Write-You-A-Lexer is a project that implements a lexer for Python 3.9 version. This project has five `Example` folders. Each `Example` folder builds on the previous version. But, each `Example` folder can be run and tested indepenently.
 
-This project is used in the tutorial `Alex By Example (Write-You-A-Python-Lexer) and it can be understood by going through the tutorial.
+This project is used in the tutorial [Alex By Example (Write-You-A-Python-Lexer)](https://devanla.com/posts/wya-lexer.html) and it can be understood by going through the tutorial.
 
 # Layout of the Project
 
