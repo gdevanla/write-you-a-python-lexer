@@ -133,7 +133,7 @@ stack exec wya-lexer-exe -- --example_name Example5 --file_name hello_world.p  0
 
 ```
 
-### Executing from ghci / from other
+### Executing from ghci / Using Library Functions
 
 ``` bash
 
