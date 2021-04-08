@@ -160,4 +160,7 @@ The `Example5.runLexer` function can be used to call the lexer when used as a li
 
 # Known Issues (Differences with the tokenizer.py)
 
-The library is still in testing phase. This library was implemented to support the accompanying tutorial. Also, note that we don't generate the first ENCODE token and the last ENDMARKER token just to keep testing simple. This code can easily be changed.
+The library is still in testing phase. This library was implemented to support the accompanying tutorial.
+   - Note that we don't generate the first ENCODE token and the last ENDMARKER token just to keep testing simple. This code can easily be changed.
+   - \ line continuation character is currently not supported
+   - Unicide characters in identifiers are not supported
