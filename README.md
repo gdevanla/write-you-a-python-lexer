@@ -55,11 +55,12 @@ stack exec wya-lexer-exe -- --example_name Example5 --file_name "hello_world.py"
 Here are some examples, where the prior Example does not support a grammar but using a later version the tokens are generated.
 
 ``` bash
- ~/fsf/wya-lexer on git:main x
+#  ~/fsf/write-you-a-python-lexer on git:main x
 $ stack exec wya-lexer-exe -- --example_name Example1
 identifier
+0,0-0,0:             Name       "identifier"
 42
-Right [TokenInfo {token_type = Name, token_string = "identifier", start_pos = (0,0), end_pos = (0,0)},TokenInfo {token_type = Number, token_string = "42", start_pos = (0,0), end_pos = (0,0)}]
+0,0-0,0:             Number     "42"
 
 #  ~/fsf/wya-lexer on git:main x
 $ stack exec wya-lexer-exe -- --example_name Example2
@@ -68,16 +69,72 @@ wya-lexer-exe: Lexical error(' ',[],"+ b\n")
 CallStack (from HasCallStack):
   error, called at src/Example2/Lexer.x:103:28 in wya-lexer-0.1.0.0-CGMHpbYSL6uA5793UGrB8f:Example2.Lexer
 
-#  ~/fsf/wya-lexer on git:main x C:1
+#  ~/fsf/write-you-a-python-lexer on git:main x C:130
 $ stack exec wya-lexer-exe -- --example_name Example3
 a + b
-Right [TokenInfo {token_type = Name, token_string = "a", start_pos = (1,1), end_pos = (1,1)},TokenInfo {token_type = Plus, token_string = "+", start_pos = (1,3), end_pos = (1,3)},TokenInfo {token_type = Name, token_string = "b", start_pos = (1,5), end_pos = (1,5)}]
-
-#  ~/fsf/wya-lexer on git:main x
-$
+1,1-1,1:             Name       "a"
+1,3-1,3:             Plus       "+"
+1,5-1,5:             Name       "b"
 
 ```
 
-# Caveats
+Now let's print a full Python program.
 
-The library is still in testing phase. This library was implemented to support the accompanying tutorial.
+``` bash
+
+#  ~/fsf/write-you-a-python-lexer on git:main x
+$ more hello_world.py
+def hello_world():
+    print('Testing the lexer') # with a comment here
+
+    # and comment on empty line followed by empty line
+
+    if 42: # here we create an indent
+        another_indent()
+# dedent here
+hello_world()
+
+
+#  ~/fsf/write-you-a-python-lexer on git:main x
+$ time stack exec wya-lexer-exe -- --example_name Example5 --file_name hello_world.py
+1,0-1,3:             Name       "def"
+1,4-1,15:            Name       "hello_world"
+1,15-1,16:           Lpar       "("
+1,16-1,17:           Rpar       ")"
+1,17-1,18:           Colon      ":"
+1,18-1,19:           Newline    "\n"
+2,0-2,4:             Indent     "    "
+2,4-2,9:             Name       "print"
+2,9-2,10:            Lpar       "("
+2,10-2,29:           String     "'Testing the lexer'"
+2,29-2,30:           Rpar       ")"
+2,31-2,52:           Comment    "# with a comment here"
+2,52-2,53:           Newline    "\n"
+4,4-4,54:            Comment    "# and comment on empty line followed by empty line"
+4,54-4,55:           Nl         "\n"
+5,0-5,1:             Nl         "\n"
+6,4-6,6:             Name       "if"
+6,7-6,9:             Number     "42"
+6,9-6,10:            Colon      ":"
+6,11-6,37:           Comment    "# here we create an indent"
+6,37-6,38:           Newline    "\n"
+7,0-7,8:             Indent     "        "
+7,8-7,22:            Name       "another_indent"
+7,22-7,23:           Lpar       "("
+7,23-7,24:           Rpar       ")"
+7,24-7,25:           Newline    "\n"
+8,0-8,13:            Comment    "# dedent here"
+8,13-8,14:           Nl         "\n"
+9,0-9,0:             Dedent     ""
+9,0-9,0:             Dedent     ""
+9,0-9,11:            Name       "hello_world"
+9,11-9,12:           Lpar       "("
+9,12-9,13:           Rpar       ")"
+9,13-9,14:           Newline    "\n"
+stack exec wya-lexer-exe -- --example_name Example5 --file_name hello_world.p  0.19s user 0.03s system 101% cpu 0.220 total
+
+```
+
+# Known Issues (Differences with the tokenizer.py)
+
+The library is still in testing phase. This library was implemented to support the accompanying tutorial. Also, note that we don't generate the first ENCODE token and the last ENDMARKER token just to keep testing simple. This code can easily be changed.
