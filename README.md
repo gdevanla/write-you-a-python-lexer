@@ -1,4 +1,4 @@
-# write-you-a-lexer
+# Write-You-A-Python-Lexer
 
 Write-You-A-Lexer is a project that implements a lexer for Python 3.9 version. This project has five `Example` folders. Each `Example` folder builds on the previous version. But, each `Example` folder can be run and tested indepenently.
 
